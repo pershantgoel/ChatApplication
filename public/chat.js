@@ -17,22 +17,26 @@ btn.addEventListener('click' ,function(){
         message:message.value,
         handle:handle.value
     });
+   
 });
 });
 
-//
+//It will emit data 
 message.addEventListener('keypress',function(){
-    socket.on('typing',handle.value+"is typing a message");
+    socket.emit('typing',handle.value);
+    
 })
 
 //Listen for Events
 //socket.on is for listening the msg coming to it
+//socket.on will recieve msg
 socket.on('chat' ,function(data){
     feedback.innerHTML ="";
+    message.value="";
     output.innerHTML+='<p><strong>' + data.handle + ': </strong>' + data.message +'</p>';
 });
 
-//
+//It will recieve data
 socket.on('typing',function(data){
     feedback.innerHTML = '<p><em>' + data + ' is typing a message...</em></p>';
 });
