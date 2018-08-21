@@ -1,7 +1,7 @@
 //Making connection of client with server
 //This js is running on Frontend
 // io is coming from cdn library of socket that loads on browser frontend
-var socket = io.connect('http://localhost:3000');
+var socket = io.connect('https://floating-wave-94000.herokuapp.com/');
 
 //Query DOM
 var message = document.getElementById('message'),
