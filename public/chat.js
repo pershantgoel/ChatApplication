@@ -1,7 +1,10 @@
 //Making connection of client with server
 //This js is running on Frontend
 // io is coming from cdn library of socket that loads on browser frontend
-var socket = io.connect('https://floating-wave-94000.herokuapp.com/');
+window.addEventListener('load' , ()=>{
+    var socket = io.connect('https://floating-wave-94000.herokuapp.com/');
+});
+
 
 //Query DOM
 var message = document.getElementById('message'),
@@ -11,7 +14,6 @@ var message = document.getElementById('message'),
       feedback = document.getElementById('feedback');
 
 //Emit Events
-window.addEventListener('load' , ()=>{
 btn.addEventListener('click' ,function(){
     socket.emit('chat' ,{           //here 'chat' is the name of your msg
         message:message.value,
@@ -19,7 +21,7 @@ btn.addEventListener('click' ,function(){
     });
    
 });
-});
+
 
 //It will emit data 
 message.addEventListener('keypress',function(){

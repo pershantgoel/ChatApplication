@@ -4,8 +4,11 @@ body{
 
 h2{
     font-size: 18px;
-    padding: 10px 20px;
+    padding: 0px 20px;
     color: #575ed8;
+}
+h3{
+    margin: 0px;
 }
 
 #mario-chat{
