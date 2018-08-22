@@ -3,7 +3,7 @@
 // io is coming from cdn library of socket that loads on browser frontend
 window.addEventListener('load' , ()=>{
     var socket = io.connect('https://floating-wave-94000.herokuapp.com/');
-});
+
 
 
 //Query DOM
@@ -41,4 +41,5 @@ socket.on('chat' ,function(data){
 //It will recieve data
 socket.on('typing',function(data){
     feedback.innerHTML = '<p><em>' + data + ' is typing a message...</em></p>';
+});
 });
