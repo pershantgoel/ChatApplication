@@ -24,7 +24,8 @@
 </body>
 <script src="chat.js"></script>
 <script>
-    $("#chat-window").animate({ scrollBottom: $('#chat-window').height() }, "fast");
+$('#chat-window').scrollTop($('#chat-window')[0].scrollHeight);
+    //$("#chat-window").animate({ scrollBottom: $('#chat-window').height() }, "fast");
   
 </script>
 </html>
